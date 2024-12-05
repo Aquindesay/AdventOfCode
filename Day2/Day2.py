@@ -12,14 +12,13 @@ for tem in liste:
     for i in range(0, len(tem)-1):
         distance = abs(tem[i] - tem[i+1])
         if distance > 3:
-            break
+            continue
     curr = list(tem)
-    tem.sort()
-    if curr == tem:
-        count += 1
-    tem.sort(reverse = True)
-    if curr == tem:
-        count += 1     
+    curr2 = list (tem)
+    curr.sort()
+    curr2.sort(reverse=True)
+    if curr == tem or curr2 == tem:
+        count += 1   
         
 print(count)
         
